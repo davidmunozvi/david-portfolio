@@ -1,13 +1,60 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --fs-title-1: 2rem;
+  --fs-title-2: 1.5rem;
+  --fs-title-3: 1.2rem;
+  --font-size-base: 1rem;
+  --theme-body-txt: #353539;
+  --search-size-mx-h: 3rem;
+  --zIndex-header: 20;
+  --zIndex-component: 5;
+  --brand-color_1: rgb(234, 235, 247);
+  --brand-color_2: #303ab2;
+  --brand-color_3: #cbcdeb;
+  --brand-color_4: #777;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: var(--font-size-base);
+  color: var(--theme-body-txt);
+}
+a {
+  text-decoration: none;
+  all: unset;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  all: unset;
+}
+
+
+h1 {
+  display: block;
+  font-size: var(--fs-title-1);
+  font-weight: bold;
+}
+
+h2 {
+  display: block;
+  font-size: var(--fs-title-2);
+  font-weight: bold;
 }
