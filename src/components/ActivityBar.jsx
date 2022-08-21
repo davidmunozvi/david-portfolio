@@ -1,7 +1,10 @@
-import { IconColorMode, IconGitHub, IconLinkedIn, IconMenu } from './Icons';
+import { IconGitHub, IconLinkedIn, IconMenu, IconMoon, IconSun } from './Icons';
 
 import { Select } from './Select';
 import styled from 'styled-components';
+import useTheme from '@/hooks/useTheme';
+
+const iconSize = '24px';
 
 const StyledWrapper = styled.div`
 	display: flex;
@@ -32,23 +35,44 @@ const Action = styled.a`
 		`}
 `;
 
-export const ActivityBar = ({ isNavigationOpen = true, OnClick }) => {
+const MenuAction = styled(Action)`
+	@media (min-width: 768px) {
+		pointer-events: none;
+	}
+`;
+
+export const ActivityBar = ({ isNavigationOpen, OnClick }) => {
+	const { theme, setTheme } = useTheme();
+
+	const themeIcon =
+		theme === 'dark' ? (
+			<IconSun size={iconSize} />
+		) : (
+			<IconMoon size={iconSize} />
+		);
+
+	const setApplicationTheme = () => {
+		const isDarkTheme = theme === 'dark';
+
+		isDarkTheme ? setTheme('light') : setTheme('dark');
+	};
+
 	return (
 		<StyledWrapper>
 			<ActionsWrapper>
-				<Action active={isNavigationOpen} as='button' onClick={OnClick}>
-					<IconMenu size='24px' />
-				</Action>
+				<MenuAction active={isNavigationOpen} as='button' onClick={OnClick}>
+					<IconMenu size={iconSize} />
+				</MenuAction>
 
 				<Action target='_blank' href='https://github.com/DavidMunozvi'>
-					<IconGitHub size='24px' />
+					<IconGitHub size={iconSize} />
 				</Action>
 
 				<Action
 					target='_blank'
 					href='https://www.linkedin.com/in/davidmu%C3%B1ozviejo/'
 				>
-					<IconLinkedIn size='24px' />
+					<IconLinkedIn size={iconSize} />
 				</Action>
 			</ActionsWrapper>
 
@@ -57,8 +81,8 @@ export const ActivityBar = ({ isNavigationOpen = true, OnClick }) => {
 					<Select options={['EN', 'ES']} />
 				</Action>
 
-				<Action>
-					<IconColorMode size='24px' />
+				<Action as='button' onClick={setApplicationTheme}>
+					{themeIcon}
 				</Action>
 			</ActionsWrapper>
 		</StyledWrapper>
