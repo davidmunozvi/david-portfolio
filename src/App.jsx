@@ -1,7 +1,20 @@
-import "./App.css";
+import { GlobalStyle, Theme } from '@/themes';
+
+import { ActionsLayout } from '@/components/ActionsLayout';
+import { GlobalProvider } from '@/context/GlobalState';
+import Router from './Router';
 
 function App() {
-  return <div className="App">Hello world! /home /about</div>;
+	return (
+		<GlobalProvider>
+			<Theme>
+				<GlobalStyle />
+				<ActionsLayout>
+					<Router />
+				</ActionsLayout>
+			</Theme>
+		</GlobalProvider>
+	);
 }
 
 export default App;
