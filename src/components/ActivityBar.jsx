@@ -64,7 +64,7 @@ export const ActivityBar = ({ isNavigationOpen, OnClick }) => {
 					<IconMenu size={iconSize} />
 				</MenuAction>
 
-				<Action target='_blank' href='https://github.com/DavidMunozvi'>
+				<Action target='_blank' href='https://github.com/davidmunozvi'>
 					<IconGitHub size={iconSize} />
 				</Action>
 
