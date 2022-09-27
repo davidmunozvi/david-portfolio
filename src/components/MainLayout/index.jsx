@@ -1,5 +1,6 @@
-import { ActivityBar } from '@/components/ActivityBar';
-import { Navigation } from '@/components/Navigation';
+import { ActivityBar } from './ActivityBar';
+import { Background } from './Background';
+import { Navigation } from './Navigation';
 import styled from 'styled-components';
 import useBreakpoints from '@/hooks/useBreakpoints';
 import { useState } from 'react';
@@ -18,11 +19,19 @@ const StyledContent = styled.div`
 `;
 
 const StyledPageContainer = styled.main`
+	position: relative;
 	overflow-x: hidden;
 	height: 100%;
+	display: flex;
+	justify-content: center;
 `;
 
-export const ActionsLayout = ({ children }) => {
+const StyledPage = styled.div`
+	width: 1200px;
+	padding: 100px 0;
+`;
+
+export const MainLayout = ({ children }) => {
 	const { isMobile } = useBreakpoints();
 	const [isNavigationOpen, setIsNavigationOpen] = useState(false);
 	const handleNav = value => {
@@ -41,7 +50,8 @@ export const ActionsLayout = ({ children }) => {
 					isNavigationOpen={isNavigationOpen}
 				/>
 				<StyledPageContainer onClick={() => handleNav(false)}>
-					{children}
+					<Background />
+					<StyledPage>{children}</StyledPage>
 				</StyledPageContainer>
 			</StyledContent>
 		</StyledContainer>

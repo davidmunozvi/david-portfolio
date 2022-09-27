@@ -7,8 +7,8 @@ import useTheme from '@/hooks/useTheme';
 const themes = {
 	default: {
 		breakpoints,
-		space: ['2px', '4px', '8px', '16px', '32px', '64px'],
-		fontFamily: 'Open Sans, sans-serif',
+		spacing: ['2px', '4px', '8px', '16px', '32px', '64px'],
+		fontFamily: ['Roboto', 'Cascadia Code'],
 		fontSizes: ['12px', '14px', '16px', '20px', '24px'],
 	},
 	light: {

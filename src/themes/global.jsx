@@ -1,8 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
+import fonts from './fonts';
 import reset from './reset';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
+  ${fonts}
 
   body {
     color: ${({ theme }) => theme.colors.textPrimary};
@@ -10,8 +12,8 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: ${({ theme }) => theme.fontFamily[0]}, Arial;
     font-size: var(--font-size-base);
-    /* min-height: 100vh; */
   }
   html {
     font-family: ${({ theme }) => theme.fontFamily};

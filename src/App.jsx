@@ -1,7 +1,7 @@
 import { GlobalStyle, Theme } from '@/themes';
 
-import { ActionsLayout } from '@/components/ActionsLayout';
 import { GlobalProvider } from '@/context/GlobalState';
+import { MainLayout } from '@/components/MainLayout';
 import Router from './Router';
 
 function App() {
@@ -9,9 +9,9 @@ function App() {
 		<GlobalProvider>
 			<Theme>
 				<GlobalStyle />
-				<ActionsLayout>
+				<MainLayout>
 					<Router />
-				</ActionsLayout>
+				</MainLayout>
 			</Theme>
 		</GlobalProvider>
 	);

@@ -1,6 +1,12 @@
-import { IconGitHub, IconLinkedIn, IconMenu, IconMoon, IconSun } from './Icons';
+import {
+	IconGitHub,
+	IconLinkedIn,
+	IconMenu,
+	IconMoon,
+	IconSun,
+} from '@/components/Icons';
 
-import { Select } from './Select';
+import { Select } from '../Select';
 import styled from 'styled-components';
 import useTheme from '@/hooks/useTheme';
 
